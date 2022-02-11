@@ -1,0 +1,38 @@
+class Fork {
+    /** @type {Fork[]} */
+    static forks = [];
+    /** @type {HTMLElement} */
+    static container;
+    /** @type {Fork} */
+    static selection;
+
+    static createElement(_f) {
+        let e = document.createElement('div');
+
+        e.id = _f.name;
+        e.title = _f.name;
+
+        e.innerText = _f.name;
+
+        e.className = "option";
+        e.style.backgroundColor = _f.color;
+
+        e.addEventListener('click', function () { _f.select() });
+        
+        return e;
+    }
+
+    constructor (_name = "no name", _color = "#ffffff") {
+        this.name = _name;
+        this.color = _color;
+
+        this.element = Fork.createElement(this);
+
+        Fork.container.appendChild(this.element);
+        Fork.forks.push(this);
+    }
+
+    select() {
+        Fork.selection = this;
+    }
+}
