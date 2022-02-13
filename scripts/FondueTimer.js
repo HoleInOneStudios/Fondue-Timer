@@ -1,4 +1,4 @@
-const start = () => {
+function start() {
     //Get DOM Elements
     Timer.container = document.getElementById('timer_container');
     Type.container = document.getElementById('type_container');
@@ -10,3 +10,7 @@ const start = () => {
     new Type("A");
     new Type("B");
 }
+
+setInterval(() => {
+    Timer.update();
+}, 1000);

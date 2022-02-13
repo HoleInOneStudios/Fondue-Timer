@@ -1,5 +1,8 @@
 /* Importing */
-
+@font-face {
+  font-family: 'Seven Segment';
+  src: url('./rsc/7segments.ttf');
+}
 
 /* Vars */
 
@@ -13,6 +16,8 @@ body {
   align-items: center;
 
   user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 div {
@@ -22,15 +27,16 @@ div {
 .option_container {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   overflow-x: scroll;
 }
 
 .option {
   width: 5rem;
   height: 5rem;
-  margin: .4rem;
+  margin: 1rem;
 
-  border-radius: 1rem;
+  border-radius: 2vw;
   text-align: center;
   word-wrap: break-word;
 
@@ -44,4 +50,12 @@ div {
   flex-direction: row;
 
   border: solid;
+}
+
+.timer_text {
+  text-align: center;
+  font-size: 5vh;
+  font-family: 'Seven Segment';
+
+  flex-grow: 10;
 }
