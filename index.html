@@ -19,6 +19,9 @@
     <link rel="preload" as="image" href="./rsc/006-broccoli.png" />
     <link rel="preload" as="image" href="./rsc/007-ewe.png" />
 
+    <!--Link Favicon-->
+    <link rel="shortcut icon" href="./rsc/icons8-fondue-96.png" type="image/x-icon">
+
     <!--Link Fonts-->
     <link rel="preload" as="font" type="font/ttf" href="./rsc/7segments.ttf" crossorigin/>
 
@@ -32,6 +35,8 @@
     <title>Fondue Timer</title>
   </head>
   <body onload="start();">
+    <audio id="audio_timeUp" source="./rsc/timesUp.mp3"></audio>
+
     <div class="option_container" id="type_container" title=""></div>
     <div class="option_container" id="fork_container" title=""></div>
     <div class="timer_container" id="timer_container" title=""></div>

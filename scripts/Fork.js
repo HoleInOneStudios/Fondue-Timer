@@ -5,12 +5,11 @@ class Fork {
     static container;
     /** @type {Fork} */
     static selection;
-
+    /** @param {Fork} _f @returns {HTMLDivElement} */
     static createElement(_f) {
         let e = document.createElement('div');
 
-        e.id = _f.name;
-        e.title = _f.name;
+        e.title = "Select " + _f.name;
 
         e.innerText = _f.name;
 
@@ -22,10 +21,14 @@ class Fork {
         return e;
     }
 
+    /** @param {string} _name @param {string} _color  */
     constructor (_name = "no name", _color = "#ffffff") {
+        /** @type {string} */
         this.name = _name;
+        /** @type {string} */
         this.color = _color;
 
+        /** @type {HTMLDivElement} */
         this.element = Fork.createElement(this);
 
         Fork.container.appendChild(this.element);
