@@ -79,3 +79,7 @@ div {
 
   flex-grow: 10;
 }
+
+.overtime {
+  color: red;
+}

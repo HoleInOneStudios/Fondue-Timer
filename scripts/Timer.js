@@ -9,6 +9,9 @@ class Timer {
                 element.sec_left -= 1;
                 element.text.innerText = parseInt(element.sec_left / 60) + ":" + element.sec_left % 60;
             }
+            else {
+                element.text.className += " overtime";
+            }
         });
     }
 
