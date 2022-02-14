@@ -30,7 +30,7 @@ class Timer {
     static createElement(_t) {
         let e = document.createElement('div');
         e.className = "timer";
-        e.title = `Timer for ${_t.fork.name} of ${_t.type.name}`;
+        e.title = `Timer for ${_t.fork.name}'s ${_t.type.name}`;
         e.addEventListener('click', function () { _t.dismiss() });
         Timer.container.appendChild(e);
 
