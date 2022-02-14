@@ -4,11 +4,15 @@ function start() {
     Type.container = document.getElementById('type_container');
     Fork.container = document.getElementById('fork_container');
 
-    new Fork("1", "#ff0000");
-    new Fork("2", "#0000ff");
+    new Type("Beef: Medium Rare", "./rsc/default.png", .50);
+    new Type("Fish", "./rsc/default.png", 0.50);
+    new Type("Seafood", "./rsc/default.png", 2.00);
+    new Type("Lamb", "./rsc/default.png", 1.00);
+    new Type("Pork", "./rsc/default.png", 1.00);
+    new Type("Poultry", "./rsc/default.png", 2.00);
+    new Type("Vegetables", "./rsc/default.png", 3.00);
 
-    new Type("A");
-    new Type("B");
+    new Fork("Guest")
 }
 
 setInterval(() => {

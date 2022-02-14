@@ -6,6 +6,19 @@
 
 /* Vars */
 
+/* Animations */
+@keyframes timerOut {
+  from {
+    opacity: 100%;
+    height: 5rem;
+  }
+
+  to {
+    opacity: 0%;
+    height: 0rem;
+  }
+}
+
 
 /* main */
 body {
@@ -14,6 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: stretch;
 
   user-select: none;
   -moz-user-select: none;
@@ -50,6 +64,11 @@ div {
   flex-direction: row;
 
   border: solid;
+}
+
+.timer_out {
+  animation-name: timerOut;
+  animation-duration: .5s;
 }
 
 .timer_text {

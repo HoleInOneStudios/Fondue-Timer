@@ -29,9 +29,8 @@ class Type {
      * @param {string} _icon 
      * @param {number} _time 
      */
-    constructor (_name = "no name", _color = "#ffffff", _icon = "./rsc/default.png", _time = 0) {
+    constructor (_name = "no name", _icon = "./rsc/default.png", _time = 1) {
         this.name = _name;
-        this.color = _color;
         this.icon = _icon;
         this.sec = (_time.toFixed(2) * 60).toFixed(2);
 
