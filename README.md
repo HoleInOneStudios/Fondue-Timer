@@ -1,9 +1,10 @@
 # Fondue Timer
+
+## Starter Temperatures
+
 | Type       | Time                          |
 | ---------- | ----------------------------- |
-| Beef       | Rare: 15 to 20 seconds        |
-|            | Medium Rare: 25 to 30 seconds |
-|            | Well Done: 40 to 45 seconds   |
+| Beef       | Medium Rare: 25 to 30 seconds |
 | Fish       | 30 to 60 seconds              |
 | Seafood    | 2 to 3 minutes                |
 | Lamb       | 1 minute                      |

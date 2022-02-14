@@ -43,4 +43,12 @@ class Type {
     addTimer() {
         let _r = new Timer(Fork.selection, this);
     }
+
+    remove() {
+        Type.types.splice(Type.types.indexOf(this), 1)
+        this.element.classList += " fade_out";
+        setInterval(() => {
+            this.element.remove();
+        }, 500);
+    }
 }

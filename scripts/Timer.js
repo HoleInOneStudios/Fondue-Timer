@@ -62,7 +62,7 @@ class Timer {
 
     dismiss() {
         Timer.timers.splice(Timer.timers.indexOf(this), 1);
-        this.element.className += " timer_out";
+        this.element.className += " fade_out";
         setTimeout(() => {
             this.element.remove();
         }, 500);
