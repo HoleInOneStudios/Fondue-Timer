@@ -16,7 +16,10 @@ class Fork {
         e.className = "option";
         e.style.backgroundColor = _f.color;
 
-        e.addEventListener('click', function () { _f.select() });
+        e.addEventListener("click", function () {
+            _f.select();
+        });
+
         
         return e;
     }

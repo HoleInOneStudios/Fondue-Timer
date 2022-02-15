@@ -18,7 +18,6 @@ class Type {
         e.addEventListener("click", function () {
             _t.addTimer();
         });
-
         return e;
     }
 
@@ -48,5 +47,9 @@ class Type {
         setInterval(() => {
             this.element.remove();
         }, 500);
+    }
+
+    edit() {
+        console.log("Editing...");
     }
 }
