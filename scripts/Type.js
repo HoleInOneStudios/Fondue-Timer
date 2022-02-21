@@ -38,7 +38,9 @@ class Type {
     }
 
     addTimer() {
-        let _r = new Timer(Fork.selection, this);
+        if (!editing) {
+            let _r = new Timer(Fork.selection, this);
+        }
     }
 
     remove() {

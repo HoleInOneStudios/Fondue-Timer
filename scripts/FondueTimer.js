@@ -16,15 +16,19 @@ function start() {
   new Type("Vegetables", "./rsc/006-broccoli.png", 3.0);
   //new Type("Test", "./rsc/icons8-fondue-96.png", .1);
 
-  new Fork("", '#000000');
-  new Fork("", '#ff0000');
-  new Fork("", '#00ff00');
-  new Fork("", '#ff00ff');
-  new Fork("", '#0000ff');
-  new Fork("", '#00ffff');
-  new Fork("", '#ffff00');
+  new Fork("Black", '#000000');
+  new Fork("Red", '#ff0000');
+  new Fork("Green", '#00ff00');
+  new Fork("Purple", '#ff00ff');
+  new Fork("Blue", '#0000ff');
+  new Fork("Cyan", '#00ffff');
+  new Fork("Yellow", '#ffff00');
 }
 
 setInterval(() => {
   Timer.update();
 }, 1000);
+
+function toggleEdit() {
+  editing = !editing;
+}

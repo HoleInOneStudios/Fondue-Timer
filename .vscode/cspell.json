@@ -4,6 +4,7 @@
         "Autobuild",
         "codeql",
         "inputed",
-        "socio"
+        "socio",
+        "uicolors"
     ]
 }
