@@ -1,4 +1,9 @@
 class Fork {
+    /** @type {HTMLInputElement} */
+    static edit_name;
+    /** @type {HTMLInputElement} */
+    static edit_color;
+
     /** @type {Fork[]} */
     static forks = [];
     /** @type {HTMLElement} */

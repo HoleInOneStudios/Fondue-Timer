@@ -6,6 +6,8 @@ function start() {
   Timer.audio = document.getElementById("audio_timeUp");
   Type.container = document.getElementById("type_container");
   Fork.container = document.getElementById("fork_container");
+  //Fork.edit_name = document.getElementById("fork_name");
+  //Fork.edit_color = document.getElementById("fork_color");
 
   new Type("Beef: Medium Rare", "./rsc/002-cow.png", 0.5);
   new Type("Fish", "./rsc/004-fish.png", 0.5);
