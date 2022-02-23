@@ -20,10 +20,20 @@
     <link rel="preload" as="image" href="./rsc/007-ewe.png" />
 
     <!--Link Favicon-->
-    <link rel="shortcut icon" href="./rsc/icons8-fondue-96.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./rsc/icons8-fondue-96.png"
+      type="image/x-icon"
+    />
 
     <!--Link Fonts-->
-    <link rel="preload" as="font" type="font/ttf" href="./rsc/7segments.ttf" crossorigin/>
+    <link
+      rel="preload"
+      as="font"
+      type="font/ttf"
+      href="./rsc/7segments.ttf"
+      crossorigin
+    />
 
     <!--Script Tags-->
     <script src="./scripts/Fork.js"></script>
@@ -36,17 +46,36 @@
   </head>
   <body onload="start();">
     <audio id="audio_timeUp" source="./rsc/timesUp.mp3"></audio>
-    <!-- <button onclick="toggleEdit();" class="editToggle">Editing Toggle</button> -->
+    <button onclick="toggleEdit();" class="editToggle">Editing Toggle</button>
 
     <div class="option_container" id="type_container" title=""></div>
     <div class="option_container" id="fork_container" title=""></div>
     <div class="timer_container" id="timer_container" title=""></div>
 
-    <!-- <div class="edit_on">
-      <input type="text" id="fork_name">
-      <input type="color" id="fork_color">
-      <button onclick="cancelFormEdit();">Cancel</button>
-      <button onclick="confirmFormEdit();">Confirm</button>
-    </div> -->
+    <div id="fork_edit" class="edit off">
+      <div>
+        <label for="fork_name">Name</label>
+        <input id="fork_name" type="text" />
+        <br />
+        <label for="fork_color">Color</label>
+        <input id="fork_color" type="color" />
+        <br />
+        <button onclick="Fork.cancelEdit()">Cancel</button>
+        <button onclick="Fork.confirmEdit()">Confirm</button>
+      </div>
+    </div>
+
+    <div id="type_edit" class="edit off">
+      <div>
+        <label for="type_name">Name</label>
+        <input id="type_name" type="text" />
+        <br />
+        <label for="type_time">Time</label>
+        <input id="type_time" type="number" />
+        <br />
+        <button onclick="Type.cancelEdit()">Cancel</button>
+        <button onclick="Type.confirmEdit()">Confirm</button>
+      </div>
+    </div>
   </body>
 </html>

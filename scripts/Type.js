@@ -1,8 +1,18 @@
 class Type {
+    /** @type {HTMLInputElement} */
+    static edit_name;
+    /** @type {HTMLInputElement} */
+    static edit_time;
+    /** @type {HTMLDivElement} */
+    static edit_type;
+    /** @type {Type} */
+    static selection;
+
     /** @type {Type[]} */
     static types = [];
     /** @type {HTMLDivElement} */
     static container;
+    
     /** @param {Type} _t @returns {HTMLDivElement} */
     static createElement(_t) {
         let e = document.createElement("img");
@@ -19,6 +29,28 @@ class Type {
             _t.addTimer();
         });
         return e;
+    }
+    static Edit() {
+        console.log("Toggle Edit")
+
+        Type.selection = this;
+
+        Type.edit_name.value = Type.selection.name;
+        Type.edit_time.value = Type.selection.sec / 60;
+
+        Type.edit_type.classList.replace('off', 'on');
+    }
+    static cancelEdit() {
+        console.log("Cancel Edit");
+        Type.edit_type.classList.replace('on', 'off');
+    }
+    static confirmEdit() {
+        console.log("Confirm Edit")
+
+        Type.selection.name = Type.edit_name.value;
+        Type.selection.update();
+
+        Type.edit_type.classList.replace('on', 'off');
     }
 
     /** @param {string} _name @param {string} _icon @param {number} _time  */
@@ -37,9 +69,19 @@ class Type {
         Type.types.push(this);
     }
 
+    update() {
+        this.element.id = this.name;
+        this.element.title = this.name;
+        this.element.className = "option";
+        this.element.alt = this.name;
+        this.element.src = this.icon;
+    }
+
     addTimer() {
         if (!editing) {
             let _r = new Timer(Fork.selection, this);
+        } else if (editing) {
+            //Type.Edit();
         }
     }
 
@@ -49,9 +91,5 @@ class Type {
         setInterval(() => {
             this.element.remove();
         }, 500);
-    }
-
-    edit() {
-        console.log("Editing...");
     }
 }

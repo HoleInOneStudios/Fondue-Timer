@@ -3,6 +3,8 @@ class Fork {
     static edit_name;
     /** @type {HTMLInputElement} */
     static edit_color;
+    /** @type {HTMLDivElement} */
+    static edit_fork
 
     /** @type {Fork[]} */
     static forks = [];
@@ -30,6 +32,27 @@ class Fork {
         
         return e;
     }
+    static Edit() {
+        console.log("Toggle Edit")
+
+        Fork.edit_name.value = Fork.selection.name;
+        Fork.edit_color.value = Fork.selection.color;
+
+        Fork.edit_fork.classList.replace('off', 'on');
+    }
+    static cancelEdit() {
+        console.log("Cancel Edit");
+        Fork.edit_fork.classList.replace('on', 'off');
+    }
+    static confirmEdit() {
+        console.log("Confirm Edit")
+
+        Fork.selection.name = Fork.edit_name.value;
+        Fork.selection.color = Fork.edit_color.value;
+        Fork.selection.update();
+
+        Fork.edit_fork.classList.replace('on', 'off');
+    }
 
     /** @param {string} _name @param {string} _color  */
     constructor (_name = "no name", _color = "#ffffff") {
@@ -40,13 +63,26 @@ class Fork {
 
         /** @type {HTMLDivElement} */
         this.element = Fork.createElement(this);
+        
 
         Fork.container.appendChild(this.element);
         Fork.forks.push(this);
     }
 
+    update() {
+        this.element.title = "Select " + this.name;
+        this.element.className = "option";
+        this.element.style.backgroundColor = this.color;
+        this.element.style.color = getTextColor(this.color);
+        this.element.style.borderColor = "#000000";
+        this.element.innerText = this.name;
+    }
+
     select() {
         Fork.selection = this;
+        if (editing) {
+            Fork.Edit();
+        }
     }
 
     remove() {

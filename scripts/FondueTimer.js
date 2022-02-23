@@ -4,10 +4,17 @@ function start() {
   //Get DOM Elements
   Timer.container = document.getElementById("timer_container");
   Timer.audio = document.getElementById("audio_timeUp");
+
   Type.container = document.getElementById("type_container");
+  Type.edit_name = document.getElementById("type_name");
+  Type.edit_time = document.getElementById("type_time");
+  Type.edit_type = document.getElementById("type_edit");
+
   Fork.container = document.getElementById("fork_container");
-  //Fork.edit_name = document.getElementById("fork_name");
-  //Fork.edit_color = document.getElementById("fork_color");
+  Fork.edit_name = document.getElementById("fork_name");
+  Fork.edit_color = document.getElementById("fork_color");
+  Fork.edit_fork = document.getElementById("fork_edit");
+
 
   new Type("Beef: Medium Rare", "./rsc/002-cow.png", 0.5);
   new Type("Fish", "./rsc/004-fish.png", 0.5);
