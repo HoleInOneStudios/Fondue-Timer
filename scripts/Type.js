@@ -7,12 +7,10 @@ class Type {
     static edit_type;
     /** @type {Type} */
     static selection;
-
     /** @type {Type[]} */
     static types = [];
     /** @type {HTMLDivElement} */
     static container;
-    
     /** @param {Type} _t @returns {HTMLDivElement} */
     static createElement(_t) {
         let e = document.createElement("img");
@@ -31,6 +29,7 @@ class Type {
         });
         return e;
     }
+    /** */
     static Edit() {
         console.log("Toggle Edit")
 
@@ -39,10 +38,12 @@ class Type {
 
         Type.edit_type.classList.replace('off', 'on');
     }
+    /** */
     static cancelEdit() {
         console.log("Cancel Edit");
         Type.edit_type.classList.replace('on', 'off');
     }
+    /** */
     static confirmEdit() {
         console.log("Confirm Edit")
 
@@ -52,7 +53,6 @@ class Type {
 
         Type.edit_type.classList.replace('on', 'off');
     }
-
     /** @param {string} _name @param {string} _icon @param {number} _time  */
     constructor (_name = "no name", _icon = "./rsc/default.png", _time = 1) {
         /** @type {string} */
@@ -68,7 +68,7 @@ class Type {
         Type.container.appendChild(this.element);
         Type.types.push(this);
     }
-
+    /** */
     update() {
         this.element.id = this.name;
         this.element.title = this.name;
@@ -76,7 +76,7 @@ class Type {
         this.element.alt = this.name;
         this.element.src = this.icon;
     }
-
+    /** */
     addTimer() {
         
         if (!editing) {
@@ -85,7 +85,7 @@ class Type {
             Type.Edit();
         }
     }
-
+    /** */
     remove() {
         Type.types.splice(Type.types.indexOf(this), 1);
         this.element.classList += " fade_out";

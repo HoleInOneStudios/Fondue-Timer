@@ -5,7 +5,6 @@ class Fork {
     static edit_color;
     /** @type {HTMLDivElement} */
     static edit_fork
-
     /** @type {Fork[]} */
     static forks = [];
     /** @type {HTMLElement} */
@@ -32,6 +31,7 @@ class Fork {
         
         return e;
     }
+    /** */
     static Edit() {
         console.log("Toggle Edit")
 
@@ -40,10 +40,12 @@ class Fork {
 
         Fork.edit_fork.classList.replace('off', 'on');
     }
+    /** */
     static cancelEdit() {
         console.log("Cancel Edit");
         Fork.edit_fork.classList.replace('on', 'off');
     }
+    /** */
     static confirmEdit() {
         console.log("Confirm Edit")
 
@@ -53,7 +55,6 @@ class Fork {
 
         Fork.edit_fork.classList.replace('on', 'off');
     }
-
     /** @param {string} _name @param {string} _color  */
     constructor (_name = "no name", _color = "#ffffff") {
         /** @type {string} */
@@ -68,7 +69,7 @@ class Fork {
         Fork.container.appendChild(this.element);
         Fork.forks.push(this);
     }
-
+    /** */
     update() {
         this.element.title = "Select " + this.name;
         this.element.className = "option";
@@ -77,14 +78,14 @@ class Fork {
         this.element.style.borderColor = "#000000";
         this.element.innerText = this.name;
     }
-
+    /** */
     select() {
         Fork.selection = this;
         if (editing) {
             Fork.Edit();
         }
     }
-
+    /** */
     remove() {
         Fork.forks.splice(Fork.forks.indexOf(this), 1)
         this.element.classList += " fade_out";

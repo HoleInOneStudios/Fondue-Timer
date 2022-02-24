@@ -13,6 +13,7 @@ class Timer {
 
         return h + ":" + m + ":" + s;
     }
+    /** */
     static update() {
         Timer.timers.forEach(element => {
             if (element.sec_left > 0){
@@ -54,7 +55,6 @@ class Timer {
         
         return e;
     }
-
     /** @param {Fork} _fork @param {Type} _type */
     constructor (_fork, _type) {
         /** @type {Fork} */
@@ -71,7 +71,7 @@ class Timer {
 
         Timer.timers.push(this);
     }
-
+    /** */
     dismiss() {
         Timer.timers.splice(Timer.timers.indexOf(this), 1);
         this.element.className += " fade_out";

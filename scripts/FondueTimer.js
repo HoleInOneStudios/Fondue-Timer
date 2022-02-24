@@ -1,5 +1,5 @@
 let editing = false;
-
+/** */
 function start() {
   //Get DOM Elements
   Timer.container = document.getElementById("timer_container");
@@ -33,11 +33,11 @@ function start() {
   new Fork("Cyan", '#00ffff');
   new Fork("Yellow", '#ffff00');
 }
-
+/** */
 setInterval(() => {
   Timer.update();
 }, 1000);
-
+/** */
 function toggleEdit() {
   editing = !editing;
 }
