@@ -26,6 +26,7 @@ class Type {
         e.alt = _t.name;
         e.src = _t.icon;
         e.addEventListener("click", function () {
+            Type.selection = _t;
             _t.addTimer();
         });
         return e;
@@ -33,10 +34,8 @@ class Type {
     static Edit() {
         console.log("Toggle Edit")
 
-        Type.selection = this;
-
         Type.edit_name.value = Type.selection.name;
-        Type.edit_time.value = Type.selection.sec / 60;
+        Type.edit_time.value = parseFloat(Type.selection.sec) / 60;
 
         Type.edit_type.classList.replace('off', 'on');
     }
@@ -48,6 +47,7 @@ class Type {
         console.log("Confirm Edit")
 
         Type.selection.name = Type.edit_name.value;
+        Type.selection.sec = Type.edit_time.value * 60;
         Type.selection.update();
 
         Type.edit_type.classList.replace('on', 'off');
@@ -78,10 +78,11 @@ class Type {
     }
 
     addTimer() {
+        
         if (!editing) {
             let _r = new Timer(Fork.selection, this);
         } else if (editing) {
-            //Type.Edit();
+            Type.Edit();
         }
     }
 
