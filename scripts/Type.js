@@ -52,6 +52,8 @@ class Type {
         Type.selection.update();
 
         Type.edit_type.classList.replace('on', 'off');
+
+        saveStorage();
     }
 
     //---------------------------------------//

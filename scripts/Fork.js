@@ -54,6 +54,8 @@ class Fork {
         Fork.selection.update();
 
         Fork.edit_fork.classList.replace('on', 'off');
+
+        saveStorage();
     }
 
     //---------------------------------------//
