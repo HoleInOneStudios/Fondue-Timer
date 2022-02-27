@@ -1,4 +1,5 @@
 let editing = false;
+let editToggle;
 /** */
 function start() {
   //Get DOM Elements
@@ -14,6 +15,8 @@ function start() {
   Fork.edit_name = document.getElementById("fork_name");
   Fork.edit_color = document.getElementById("fork_color");
   Fork.edit_fork = document.getElementById("fork_edit");
+
+  editToggle = document.getElementById('editToggle');
 
 
   
@@ -48,6 +51,12 @@ setInterval(() => {
 /** */
 function toggleEdit() {
   editing = !editing;
+  if (editing) {
+    editToggle.innerText = 'stop editing';
+  }
+  else if (!editing) {
+    editToggle.innerText = 'start editing';
+  }
 }
 
 function loadStorage() {
