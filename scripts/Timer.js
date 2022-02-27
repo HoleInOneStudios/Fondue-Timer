@@ -55,6 +55,9 @@ class Timer {
         
         return e;
     }
+
+    //---------------------------------------//
+
     /** @param {Fork} _fork @param {Type} _type */
     constructor (_fork, _type) {
         /** @type {Fork} */

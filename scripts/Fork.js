@@ -55,6 +55,9 @@ class Fork {
 
         Fork.edit_fork.classList.replace('on', 'off');
     }
+
+    //---------------------------------------//
+
     /** @param {string} _name @param {string} _color  */
     constructor (_name = "no name", _color = "#ffffff") {
         /** @type {string} */

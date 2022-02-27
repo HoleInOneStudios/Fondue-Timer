@@ -53,6 +53,9 @@ class Type {
 
         Type.edit_type.classList.replace('on', 'off');
     }
+
+    //---------------------------------------//
+
     /** @param {string} _name @param {string} _icon @param {number} _time  */
     constructor (_name = "no name", _icon = "./rsc/default.png", _time = 1) {
         /** @type {string} */
