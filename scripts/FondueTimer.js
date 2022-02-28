@@ -78,8 +78,6 @@ function loadStorage() {
   JSON.parse(localStorage.getItem('types')).forEach(element => {
     new Type(element.name, element.path, element.time);
   })
-  //Fork.forks = localStorage.getItem('forks');
-  //Type.types = localStorage.getItem('types');
 }
 
 function saveStorage() {
@@ -94,4 +92,10 @@ function saveStorage() {
     t.push({ name: element.name, path: element.icon, time: parseFloat(element.sec / 60) });
   });
   localStorage.setItem('types', JSON.stringify(t));
+}
+
+function clearStorage() {
+  Fork.forks = [];
+  Type.types = [];
+  localStorage.clear();
 }
