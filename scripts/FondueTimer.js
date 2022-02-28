@@ -51,6 +51,7 @@ setInterval(() => {
 /** */
 function toggleEdit() {
   editing = !editing;
+  closeNav();
   if (editing) {
     editToggle.innerText = 'stop editing';
     Fork.forks.forEach(element => {
@@ -99,4 +100,16 @@ function clearStorage() {
   Type.types = [];
   localStorage.clear();
   location.reload();
+}
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("menu").style.width = "10rem";
+  document.getElementsByTagName("main")[0].style.marginLeft = "15rem";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("menu").style.width = "0";
+  document.getElementsByTagName("main")[0].style.marginLeft = "0";
 }

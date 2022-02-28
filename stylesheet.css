@@ -80,7 +80,7 @@ input {
 
 .timer > p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Seven Segment";
 
   flex-grow: 10;
@@ -99,14 +99,16 @@ input {
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow-x: scroll;
+
+  right: 0;
 }
 
 .option {
-  width: 4rem;
-  padding-bottom: 4rem;
+  width: 3rem;
+  padding-bottom: .1rem;
   margin: .1rem;
   padding: 1rem;
-  float:left;
+  float: left;
 
   border-radius: 1rem;
   text-align: center;
@@ -136,6 +138,14 @@ body {
   -webkit-user-select: none;
 }
 
+main {  
+  width: 100%;
+  margin-left: 1rem;
+  margin-top: 2rem;
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
 div {
   width: 100%;
 }
@@ -147,14 +157,38 @@ div {
 =            Section Buttons                  =
 =============================================*/
 
-.editToggle {
+.openMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 2rem;
+}
+
+.closeMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  font-size: 3rem;
+}
+
+.menu {
   position: fixed;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
 
-  top: 0%;
-  right: 0%;
+  display: flex;
+  flex-direction: column;
 
-  width: 3rem;
-  height: 3rem;
+  background-color: #eee;
+
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
 /*=====  End of Section Buttons  ======*/
