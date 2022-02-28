@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Link Style-->
-    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./stylesheet.css" />
 
     <!--Link Images-->
     <link rel="preload" as="image" href="./rsc/default.png" />
@@ -46,37 +46,46 @@
   </head>
   <body onload="start();">
     <audio id="audio_timeUp" source="./rsc/timesUp.mp3"></audio>
-    <button onclick="toggleEdit();" id="editToggle" class="editToggle">start editing</button>
-    <button onclick="clearStorage();" id="clearStorage" class="editToggle" style="top: 10%">clearStorage</button>
 
-    <div class="option_container" id="type_container" title=""></div>
-    <div class="option_container" id="fork_container" title=""></div>
-    <div class="timer_container" id="timer_container" title=""></div>
+    <div id="menu" class="menu">
+      <span class="menuButton" onclick="closeNav();">&times</span>
+      <button onclick="toggleEdit();" id="editToggle">start editing</button>
+      <button onclick="clearStorage();" id="clearStorage">clearStorage</button>
+    </div>
+      <span class="menuOpenButton" onclick="openNav()">&#9776</span>
 
+    <div id="main">
+
+      <div class="option_container" id="type_container" title=""></div>
+      <div class="option_container" id="fork_container" title=""></div>
+      <div class="timer_container" id="timer_container" title=""></div>
+
+      
+    </div>
     <div id="fork_edit" class="dialogBackground hidden">
-      <div class="dialog">
-        <label for="fork_name">Name</label>
-        <input id="fork_name" type="text" />
-        <br />
-        <label for="fork_color">Color</label>
-        <input id="fork_color" type="color" />
-        <br />
-        <button onclick="Fork.cancelEdit()">Cancel</button>
-        <button onclick="Fork.confirmEdit()">Confirm</button>
+        <div class="dialog">
+          <label for="fork_name">Name</label>
+          <input id="fork_name" type="text" />
+          <br />
+          <label for="fork_color">Color</label>
+          <input id="fork_color" type="color" />
+          <br />
+          <button onclick="Fork.cancelEdit()">Cancel</button>
+          <button onclick="Fork.confirmEdit()">Confirm</button>
+        </div>
       </div>
-    </div>
 
-    <div id="type_edit" class="dialogBackground hidden">
-      <div class="dialog">
-        <label for="type_name">Name</label>
-        <input id="type_name" type="text" />
-        <br />
-        <label for="type_time">Time</label>
-        <input id="type_time" type="number" />
-        <br />
-        <button onclick="Type.cancelEdit()">Cancel</button>
-        <button onclick="Type.confirmEdit();">Confirm</button>
+      <div id="type_edit" class="dialogBackground hidden">
+        <div class="dialog">
+          <label for="type_name">Name</label>
+          <input id="type_name" type="text" />
+          <br />
+          <label for="type_time">Time</label>
+          <input id="type_time" type="number" />
+          <br />
+          <button onclick="Type.cancelEdit()">Cancel</button>
+          <button onclick="Type.confirmEdit();">Confirm</button>
+        </div>
       </div>
-    </div>
   </body>
 </html>

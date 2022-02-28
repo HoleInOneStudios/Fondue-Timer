@@ -80,7 +80,7 @@ input {
 
 .timer > p {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: "Seven Segment";
 
   flex-grow: 10;
@@ -99,14 +99,16 @@ input {
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow-x: scroll;
+
+  right: 0;
 }
 
 .option {
-  width: 4rem;
-  padding-bottom: 4rem;
+  width: 3rem;
+  padding-bottom: 3rem;
   margin: .1rem;
   padding: 1rem;
-  float:left;
+  float: left;
 
   border-radius: 1rem;
   text-align: center;
@@ -136,6 +138,23 @@ body {
   -webkit-user-select: none;
 }
 
+#main {
+  /* Layout */
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch flex-start;
+
+  transition: margin-left .5s;
+  padding: 16px;
+
+  /* No Select */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
 div {
   width: 100%;
 }
@@ -147,14 +166,40 @@ div {
 =            Section Buttons                  =
 =============================================*/
 
-.editToggle {
-  position: fixed;
+.menu {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgb(122, 122, 122); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
 
-  top: 0%;
-  right: 0%;
+.menu > button {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
 
-  width: 3rem;
-  height: 3rem;
+.menuButton {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.menuOpenButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 36px;
 }
 
 /*=====  End of Section Buttons  ======*/
