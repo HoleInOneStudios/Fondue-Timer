@@ -53,9 +53,21 @@ function toggleEdit() {
   editing = !editing;
   if (editing) {
     editToggle.innerText = 'stop editing';
+    Fork.forks.forEach(element => {
+      element.element.classList.toggle('editing', true);
+    });
+    Type.types.forEach(element => {
+      element.element.classList.toggle('editing', true);
+    });
   }
   else if (!editing) {
     editToggle.innerText = 'start editing';
+    Fork.forks.forEach(element => {
+      element.element.classList.toggle('editing', false);
+    });
+    Type.types.forEach(element => {
+      element.element.classList.toggle('editing', false);
+    });
   }
 }
 
