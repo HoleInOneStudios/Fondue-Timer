@@ -4,10 +4,10 @@
 
 @keyframes edit {
   from {
-    border: solid;
+    border-style: solid;
   }
   to {
-    border: dashed;
+    border-style: dashed;
   }
 }
 
