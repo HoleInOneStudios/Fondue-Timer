@@ -38,12 +38,12 @@ class Fork {
         Fork.edit_name.value = Fork.selection.name;
         Fork.edit_color.value = Fork.selection.color;
 
-        Fork.edit_fork.classList.replace('off', 'on');
+        Fork.edit_fork.classList.toggle('hidden');
     }
     /** */
     static cancelEdit() {
         console.log("Cancel Edit");
-        Fork.edit_fork.classList.replace('on', 'off');
+        Fork.edit_fork.classList.toggle('hidden');
     }
     /** */
     static confirmEdit() {
@@ -53,7 +53,7 @@ class Fork {
         Fork.selection.color = Fork.edit_color.value;
         Fork.selection.update();
 
-        Fork.edit_fork.classList.replace('on', 'off');
+        Fork.edit_fork.classList.toggle('hidden');
 
         saveStorage();
     }

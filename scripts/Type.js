@@ -36,12 +36,12 @@ class Type {
         Type.edit_name.value = Type.selection.name;
         Type.edit_time.value = parseFloat(Type.selection.sec) / 60;
 
-        Type.edit_type.classList.replace('off', 'on');
+        Type.edit_type.classList.toggle('hidden');
     }
     /** */
     static cancelEdit() {
         console.log("Cancel Edit");
-        Type.edit_type.classList.replace('on', 'off');
+        Type.edit_type.classList.toggle('hidden');
     }
     /** */
     static confirmEdit() {
@@ -51,7 +51,7 @@ class Type {
         Type.selection.sec = Type.edit_time.value * 60;
         Type.selection.update();
 
-        Type.edit_type.classList.replace('on', 'off');
+        Type.edit_type.classList.toggle('hidden');
 
         saveStorage();
     }

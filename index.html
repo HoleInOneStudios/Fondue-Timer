@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Link Style-->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./stylesheet.css">
 
     <!--Link Images-->
     <link rel="preload" as="image" href="./rsc/default.png" />
@@ -52,8 +52,8 @@
     <div class="option_container" id="fork_container" title=""></div>
     <div class="timer_container" id="timer_container" title=""></div>
 
-    <div id="fork_edit" class="edit off">
-      <div>
+    <div id="fork_edit" class="dialogBackground hidden">
+      <div class="dialog">
         <label for="fork_name">Name</label>
         <input id="fork_name" type="text" />
         <br />
@@ -65,8 +65,8 @@
       </div>
     </div>
 
-    <div id="type_edit" class="edit off">
-      <div>
+    <div id="type_edit" class="dialogBackground hidden">
+      <div class="dialog">
         <label for="type_name">Name</label>
         <input id="type_name" type="text" />
         <br />

@@ -49,7 +49,6 @@ class Timer {
 
         _t.text = document.createElement('p');
         _t.text.title = "Timer"
-        _t.text.className = "timer_text";
         _t.text.innerText = Timer.getFormattedTime(_t);
         e.appendChild(_t.text);
         
@@ -77,7 +76,7 @@ class Timer {
     /** */
     dismiss() {
         Timer.timers.splice(Timer.timers.indexOf(this), 1);
-        this.element.className += " fade_out";
+        this.element.className += " fadeOut";
         setTimeout(() => {
             this.element.remove();
         }, 500);
