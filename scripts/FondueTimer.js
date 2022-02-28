@@ -98,4 +98,5 @@ function clearStorage() {
   Fork.forks = [];
   Type.types = [];
   localStorage.clear();
+  location.reload();
 }
