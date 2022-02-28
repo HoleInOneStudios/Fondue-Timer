@@ -47,45 +47,42 @@
   <body onload="start();">
     <audio id="audio_timeUp" source="./rsc/timesUp.mp3"></audio>
 
+    <span class="openMenu" onclick="openNav()">&#9776;</span>
     <div id="menu" class="menu">
-      <span class="menuButton" onclick="closeNav();">&times</span>
+      <span class="closeMenu" onclick="closeNav();">&times;</span>
       <button onclick="toggleEdit();" id="editToggle">start editing</button>
       <button onclick="clearStorage();" id="clearStorage">clearStorage</button>
     </div>
-      <span class="menuOpenButton" onclick="openNav()">&#9776</span>
 
-    <div id="main">
-
+    <main>
       <div class="option_container" id="type_container" title=""></div>
       <div class="option_container" id="fork_container" title=""></div>
       <div class="timer_container" id="timer_container" title=""></div>
-
-      
-    </div>
+    </main>
     <div id="fork_edit" class="dialogBackground hidden">
-        <div class="dialog">
-          <label for="fork_name">Name</label>
-          <input id="fork_name" type="text" />
-          <br />
-          <label for="fork_color">Color</label>
-          <input id="fork_color" type="color" />
-          <br />
-          <button onclick="Fork.cancelEdit()">Cancel</button>
-          <button onclick="Fork.confirmEdit()">Confirm</button>
-        </div>
+      <div class="dialog">
+        <label for="fork_name">Name</label>
+        <input id="fork_name" type="text" />
+        <br />
+        <label for="fork_color">Color</label>
+        <input id="fork_color" type="color" />
+        <br />
+        <button onclick="Fork.cancelEdit()">Cancel</button>
+        <button onclick="Fork.confirmEdit()">Confirm</button>
       </div>
+    </div>
 
-      <div id="type_edit" class="dialogBackground hidden">
-        <div class="dialog">
-          <label for="type_name">Name</label>
-          <input id="type_name" type="text" />
-          <br />
-          <label for="type_time">Time</label>
-          <input id="type_time" type="number" />
-          <br />
-          <button onclick="Type.cancelEdit()">Cancel</button>
-          <button onclick="Type.confirmEdit();">Confirm</button>
-        </div>
+    <div id="type_edit" class="dialogBackground hidden">
+      <div class="dialog">
+        <label for="type_name">Name</label>
+        <input id="type_name" type="text" />
+        <br />
+        <label for="type_time">Time</label>
+        <input id="type_time" type="number" />
+        <br />
+        <button onclick="Type.cancelEdit()">Cancel</button>
+        <button onclick="Type.confirmEdit();">Confirm</button>
       </div>
+    </div>
   </body>
 </html>
