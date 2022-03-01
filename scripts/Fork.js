@@ -77,7 +77,7 @@ class Fork {
     /** */
     update() {
         this.element.title = "Select " + this.name;
-        this.element.className = "option";
+        this.element.className = "option editing";
         this.element.style.backgroundColor = this.color;
         this.element.style.color = getTextColor(this.color);
         this.element.style.borderColor = "#000000";
