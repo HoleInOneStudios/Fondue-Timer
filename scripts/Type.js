@@ -76,7 +76,7 @@ class Type {
     update() {
         this.element.id = this.name;
         this.element.title = this.name;
-        this.element.className = "option";
+        this.element.className = "option editing";
         this.element.alt = this.name;
         this.element.src = this.icon;
     }
