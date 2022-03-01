@@ -13,16 +13,15 @@ class Type {
     static container;
     /** @param {Type} _t @returns {HTMLDivElement} */
     static createElement(_t) {
-        let e = document.createElement("img");
+        let e = document.createElement("div");
 
         e.id = _t.name;
         e.title = _t.name;
 
-        e.className = "option";
+        e.className = "option type";
         e.style.backgroundColor = _t.color;
 
-        e.alt = _t.name;
-        e.src = _t.icon;
+        e.innerText = _t.icon;
         e.addEventListener("click", function () {
             Type.selection = _t;
             _t.addTimer();

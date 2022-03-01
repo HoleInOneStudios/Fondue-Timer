@@ -35,17 +35,10 @@ class Timer {
         e.addEventListener('click', function () { _t.dismiss() });
         Timer.container.appendChild(e);
 
-        let f = document.createElement('div');
-        f.className = "option";
-        f.style.backgroundColor = _t.fork.color;
-        f.innerText = _t.fork.name;
-        e.appendChild(f);
+        
+        e.appendChild(Fork.createElement(_t.fork));
 
-        let y = document.createElement('img');
-        y.className = "option";
-        y.alt = _t.type.name;
-        y.src = _t.type.icon;
-        e.appendChild(y);
+        e.appendChild(Type.createElement(_t.type));
 
         _t.text = document.createElement('p');
         _t.text.title = "Timer"
