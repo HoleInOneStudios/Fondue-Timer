@@ -53,7 +53,7 @@ function toggleEdit() {
   editing = !editing;
   closeNav();
   if (editing) {
-    editToggle.innerText = 'stopEditing';
+    editToggle.innerText = 'Stop';
     Fork.forks.forEach(element => {
       element.element.classList.toggle('editing', true);
     });
@@ -62,7 +62,7 @@ function toggleEdit() {
     });
   }
   else if (!editing) {
-    editToggle.innerText = 'startEditing';
+    editToggle.innerText = 'Edit';
     Fork.forks.forEach(element => {
       element.element.classList.toggle('editing', false);
     });

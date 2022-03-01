@@ -198,6 +198,9 @@ div {
   padding: 8% 8% 8% 8%;
   font-size: 25px;
   transition: 0.3s;
+  text-decoration: none;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
   border: none;
   background-color:rgba(102, 102, 102, 0.832);
