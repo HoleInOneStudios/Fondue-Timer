@@ -32,13 +32,13 @@ function start() {
     new Fork("Blue", '#0000ff');
     new Fork("Yellow", '#ffff00');
 
-    new Type("Beef: Medium Rare", "./rsc/002-cow.png", 0.5);
-    new Type("Fish", "./rsc/004-fish.png", 0.5);
-    new Type("Seafood", "./rsc/001-crab.png", 2.0);
-    new Type("Lamb", "./rsc/007-ewe.png", 1.0);
-    new Type("Pork", "./rsc/003-pig.png", 1.0);
-    new Type("Poultry", "./rsc/005-chicken.png", 2.0);
-    new Type("Vegetables", "./rsc/006-broccoli.png", 3.0);
+    new Type("Beef: Medium Rare", "🥩", 0.5);
+    new Type("Fish", "🐟", 0.5);
+    new Type("Seafood", "🦐", 2.0);
+    new Type("Lamb", "🐑", 1.0);
+    new Type("Pork", "🐖", 1.0);
+    new Type("Poultry", "🐔", 2.0);
+    new Type("Vegetables", "🥦", 3.0);
 
     saveStorage();
   }
