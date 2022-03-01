@@ -30,7 +30,6 @@ function start() {
     new Fork("Green", '#00ff00');
     new Fork("Purple", '#ff00ff');
     new Fork("Blue", '#0000ff');
-    new Fork("Cyan", '#00ffff');
     new Fork("Yellow", '#ffff00');
 
     new Type("Beef: Medium Rare", "./rsc/002-cow.png", 0.5);
