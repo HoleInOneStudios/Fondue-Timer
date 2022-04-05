@@ -1,93 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--Meta Tags-->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Link Style-->
-    <link rel="stylesheet" href="./stylesheet.css" />
+  <link rel="shortcut icon" href="./img/icons8-fondue-96.png" type="image/png">
 
-    <!--Link Images-->
-    <link rel="preload" as="image" href="./rsc/default.png" />
-    <link rel="preload" as="image" href="./rsc/001-crab.png" />
-    <link rel="preload" as="image" href="./rsc/002-cow.png" />
-    <link rel="preload" as="image" href="./rsc/003-pig.png" />
-    <link rel="preload" as="image" href="./rsc/004-fish.png" />
-    <link rel="preload" as="image" href="./rsc/005-chicken.png" />
-    <link rel="preload" as="image" href="./rsc/006-broccoli.png" />
-    <link rel="preload" as="image" href="./rsc/007-ewe.png" />
+  <style>
+    @import url('./style/index.css');
+    @import url('./font/7segments.ttf');
 
-    <!--Link Favicon-->
-    <link
-      rel="shortcut icon"
-      href="./rsc/icons8-fondue-96.png"
-      type="image/x-icon"
-    />
+    @font-face {
+      font-family: '7seg';
+      src: url('./font/7segments.ttf');
+    }
+  </style>
 
-    <!--Link Fonts-->
-    <link
-      rel="preload"
-      as="font"
-      type="font/ttf"
-      href="./rsc/7segments.ttf"
-      crossorigin
-    />
+  <script src="./script/index.js"></script>
 
-    <!--Script Tags-->
-    <script src="./scripts/Fork.js"></script>
-    <script src="./scripts/Type.js"></script>
-    <script src="./scripts/Timer.js"></script>
-    <script src="./scripts/FondueTimer.js"></script>
-
-    <!--Head Tags-->
-    <title>Fondue Timer</title>
-  </head>
-  <body onload="start();">
-    <audio id="audio_timeUp" source="./rsc/timesUp.mp3"></audio>
-
-    <span class="openMenu" onclick="openNav()">&#9776;</span>
-    <div id="menu" class="menu">
-      <span class="closeMenu" onclick="closeNav();">&times;</span>
-      <button onclick="toggleEdit();" id="editToggle" class="menuButton">Edit</button>
-      <button onclick="clearStorage();" id="clearStorage" class="menuButton">Reset</button>
-      <br>
-      <br>
-      <br>
-      <a class="menuButton" href="https://github.com/HoleInOneStudios/Fondue-Timer">Github</a>
-      <a class="menuButton" href="https://holeinonestudios.org">Website</a>
-    </div>
-
-    <main>
-      <div class="option_container" id="type_container" title=""></div>
-      <div class="option_container" id="fork_container" title=""></div>
-      <div class="timer_container" id="timer_container" title=""></div>
-    </main>
-    <div id="fork_edit" class="dialogBackground hidden">
-      <div class="dialog">
-        <label for="fork_name">Name</label>
-        <input id="fork_name" type="text" />
-        <br />
-        <label for="fork_color">Color</label>
-        <input id="fork_color" type="color" />
-        <br />
-        <button onclick="Fork.cancelEdit()">Cancel</button>
-        <button onclick="Fork.confirmEdit()">Confirm</button>
-      </div>
-    </div>
-
-    <div id="type_edit" class="dialogBackground hidden">
-      <div class="dialog">
-        <label for="type_name">Name</label>
-        <input id="type_name" type="text" />
-        <br />
-        <label for="type_time">Time</label>
-        <input id="type_time" type="number" />
-        <br />
-        <button onclick="Type.cancelEdit()">Cancel</button>
-        <button onclick="Type.confirmEdit();">Confirm</button>
-      </div>
-    </div>
-  </body>
+  <title>Fondue Timer</title>
+</head>
+<body onload="setup()">
+  
+</body>
 </html>

@@ -4,15 +4,15 @@ This is a fondue timer to keep track of cooking times. Select your fork and then
 
 ## Default Temperatures
 
-| Type       | Time                    |
-| ---------- | ----------------------- |
-| Beef       | Medium Rare: 30 seconds |
-| Fish       | 30 seconds              |
-| Seafood    | 2 minutes               |
-| Lamb       | 1 minute                |
-| Pork       | 1 minute                |
-| Poultry    | 2 minutes               |
-| Vegetables | 3 minutes               |
+| Type       | icon | Time              |
+| ---------- | ---- | ----------------- |
+| Beef       | 🥩    | Medium Rare - 0.5 |
+| Fish       | 🐟    | 0.5               |
+| Seafood    | 🦐    | 2.0               |
+| Lamb       | 🐑    | 1.0               |
+| Pork       | 🐖    | 1.0               |
+| Poultry    | 🐔    | 2.0               |
+| Vegetables | 🥦    | 3.0               |
 
 ## Default Forks
 
