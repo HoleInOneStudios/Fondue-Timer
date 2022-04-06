@@ -16,11 +16,11 @@ This is a fondue timer to keep track of cooking times. Select your fork and then
 
 ## Default Forks
 
-| Name   | Color |
-| ------ | ----- |
-| Black  | ⬛     |
-| Red    | 🟥     |
-| Green  | 🟩     |
-| Purple | 🟪     |
-| Blue   | 🟦     |
-| Yellow | 🟨     |
+| Name   | Icon |
+| ------ | ---- |
+| Black  | ⬛    |
+| Red    | 🟥    |
+| Green  | 🟩    |
+| Purple | 🟪    |
+| Blue   | 🟦    |
+| Yellow | 🟨    |

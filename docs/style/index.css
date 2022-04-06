@@ -1,0 +1,76 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: auto;
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.display {
+    padding: .5rem;
+    text-align: center;
+
+    border: 1px solid black;
+    border-radius: 100%;
+
+    width: 4em;
+    height: 4em;
+    margin: 2pt;
+
+    box-shadow: 0 0 10px black;
+    transition: all .2s;
+}
+
+.displayIcon {
+    font-size: 2rem;
+    margin: auto;
+}
+
+.displayName {
+    font-size: 1rem;
+    font-weight: bold;
+
+    margin: auto;
+}
+
+.selected {
+    box-shadow: none;
+}
+
+.timerContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+
+    transition: all .2s;
+}
+
+.timer:hover {
+    box-shadow: 0 0 10px black;
+}
+
+.timerText {
+    flex-grow: 4;
+    text-align: center;
+    font-size: 4em;
+    margin: auto;
+
+    border: 1px solid black;
+    border-radius: 20%;
+}
+
+.timerDisplay {
+    flex-grow: 0;
+}
