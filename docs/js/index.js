@@ -48,7 +48,7 @@ class Fork {
         Fork.container.append(this.elements.container);
         Fork.forks.push(this);
 
-        Fork.selected = this;
+        this.clicked();
     }
 
     clicked() {
@@ -57,7 +57,7 @@ class Fork {
         }
         Fork.selected = this;
         Fork.selected.elements.container.classList.add("selected");
-        console.log("selected: " + this.name);
+        //console.log("selected: " + this.name);
     }
 }
 
@@ -86,8 +86,8 @@ class Type {
             Type.selected.elements.container.classList.remove("selected");
         }
         Type.selected = this;
-        Type.selected.elements.container.classList.add("selected");
-        console.log("selected: " + this.name);
+        //Type.selected.elements.container.classList.add("selected");
+        //console.log("selected: " + this.name);
 
         if (!editing) {
             new Timer(Fork.selected, Type.selected);
@@ -116,7 +116,7 @@ class Timer {
     }
 
     clicked() {
-        console.log("deleted: " + this.fork.name + " " + this.type.name);
+        //console.log("deleted: " + this.fork.name + " " + this.type.name);
         this.elements.container.remove();
         Timer.timers.splice(Timer.timers.indexOf(this), 1);
     }
@@ -218,4 +218,9 @@ function createDisplay(_i, _option = false) {
         icon: e2,
         name: e3
     };
+}
+
+function toggleNav(e) {
+    console.log(e);
+    e.target.parentElement.classList.toggle('open');
 }

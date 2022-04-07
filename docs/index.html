@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="shortcut icon" href="./img/icons8-fondue-96.png" type="image/png">
+    <link
+      rel="shortcut icon"
+      href="./img/icons8-fondue-96.png"
+      type="image/png"
+    />
 
-  <style>
-    @import url('./style/index.css');
-    @import url('./font/7segments.ttf');
+    <style>
+      @import url("./style/index.css");
+      @import url("./font/7segments.ttf");
 
-    @font-face {
-      font-family: '7seg';
-      src: url('./font/7segments.ttf');
-    }
-  </style>
+      @font-face {
+        font-family: "7seg";
+        src: url("./font/7segments.ttf");
+      }
+    </style>
 
-  <script src="./js/index.js"></script>
+    <script src="./js/index.js"></script>
 
-  <title>Fondue Timer</title>
-</head>
-<body onload="setup()">
-  <div title="Fork Container" id="forkContainer" class="optionContainer"></div>
-  <div title="Type Container" id="typeContainer" class="optionContainer"></div>
-  <div title="Timer Container" id="timerContainer" class="timerContainer"></div>
-</body>
+    <title>Fondue Timer</title>
+  </head>
+  <body onload="setup()">
+    <nav>
+      <span onclick="toggleNav(event)" class="menuButton">&equiv;</span>
+      <span class="menuOption">Edit</span>
+      <br>
+      <span class="menuOption">Reset</span>
+      <br>
+      <span class="menuOption">Source</span>
+      <br>
+      <span class="menuOption">Website</span>
+      <br>
+    </nav>
+    <main>
+      <div
+        title="Fork Container"
+        id="forkContainer"
+        class="optionContainer"
+      ></div>
+      <div
+        title="Type Container"
+        id="typeContainer"
+        class="optionContainer"
+      ></div>
+      <div
+        title="Timer Container"
+        id="timerContainer"
+        class="timerContainer"
+      ></div>
+    </main>
+  </body>
 </html>

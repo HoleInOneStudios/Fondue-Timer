@@ -4,13 +4,84 @@ html {
 
 body {
     margin: auto;
+
+    width: 100%;
+    height: 100%;
 }
+
+main {
+    display: flex;
+    margin: auto;
+    margin-left: 3vw;
+    flex-direction: column;
+}
+
+nav {
+    width: 3vw;
+    height: 100%;
+
+    background-color: #999999cc;
+
+    transition: .5s;
+    
+    position: fixed;
+}
+
+.menuButton {
+    float: right;
+    width: fit-content;
+    padding: 1vh;
+    font-size: 3vw;
+}
+
+.menuOption {
+    float: left;
+    display: none;
+
+    padding: 2vw 2vw 3vw 4vw;
+}
+
+.open {
+    width: 25vw;
+}
+
+.open .menuOption {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        margin-left: 15vw;
+    }
+
+    nav {
+        width: 15vw;
+    }
+
+    .open {
+        width: 50vw;
+    }
+
+    .menuButton {
+        width: fit-content;
+        font-size: 15vw;
+    }
+}
+
+
 
 .optionContainer {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
+
+/** Display Styles */
 
 .display {
     padding: .5rem;
@@ -43,9 +114,13 @@ body {
     box-shadow: none;
 }
 
+/** Timer Styles */
+
 .timerContainer {
     display: flex;
     flex-direction: column;
+
+    overflow-y: scroll;
 
     width: 100%;
 }
