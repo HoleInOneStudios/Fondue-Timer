@@ -20,7 +20,7 @@ nav {
     width: 3vw;
     height: 100%;
 
-    background-color: #999999cc;
+    background-color: #666666f5;
 
     transition: .5s;
     
@@ -35,10 +35,17 @@ nav {
 }
 
 .menuOption {
-    float: left;
     display: none;
+    padding: 2vh 3vw 2vh 2vw;
+    margin: 0%;
 
-    padding: 2vw 2vw 3vw 4vw;
+    font-size: xx-large;
+
+    transition: .25s;
+}
+
+.menuOption:hover {
+    box-shadow: 0 0 10px black;
 }
 
 .open {
@@ -51,11 +58,11 @@ nav {
 
 @media screen and (max-width: 600px) {
     main {
-        margin-left: 15vw;
+        margin-left: 10vw;
     }
 
     nav {
-        width: 15vw;
+        width: 10vw;
     }
 
     .open {
@@ -64,7 +71,7 @@ nav {
 
     .menuButton {
         width: fit-content;
-        font-size: 15vw;
+        font-size: 10vw;
     }
 }
 
@@ -73,6 +80,7 @@ nav {
 .optionContainer {
     display: flex;
     flex-direction: row;
+    padding: 1%;
     overflow-x: auto;
 
     user-select: none;
@@ -90,8 +98,8 @@ nav {
     border: 1px solid black;
     border-radius: 100%;
 
-    width: 4em;
-    height: 4em;
+    width: max-content;
+    height: max-content;
     margin: 2pt;
 
     box-shadow: 0 0 10px black;
@@ -122,7 +130,8 @@ nav {
 
     overflow-y: scroll;
 
-    width: 100%;
+    width: 98%;
+    padding: 1%;
 }
 
 .timer {

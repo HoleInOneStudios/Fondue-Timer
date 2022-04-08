@@ -12,16 +12,39 @@ function setup() {
     new Fork("Blue", 0xffffff, "🟦");
     new Fork("Yellow", 0xffffff, "🟨");
 
-    new Type("Beef", "🥩", 0.5 )
-    new Type("Fish", "🐟", 0.5 )
-    new Type("Seafood", "🦐", 2.0 )
-    new Type("Lamb", "🐑", 1.0 )
-    new Type("Pork", "🐖", 1.0 )
-    new Type("Poultry", "🐔", 2.0 )
-    new Type("Veggies", "🥦", 3.0 )
+    new Type("Beef", "🥩", 0.5);
+    new Type("Fish", "🐟", 0.5);
+    new Type("Seafood", "🦐", 2.0);
+    new Type("Lamb", "🐑", 1.0);
+    new Type("Pork", "🐖", 1.0);
+    new Type("Poultry", "🐔", 2.0);
+    new Type("Veggies", "🥦", 3.0);
 
     window.setInterval(tick, 1000);
-} 
+}
+
+function saveStorage() {
+    let f = [];
+    Fork.forks.forEach(element => {
+        f.push(element.toObject());
+    });
+    localStorage.setItem('forks', JSON.stringify(f));
+
+    let t = [];
+    Type.types.forEach(element => {
+        t.push(element.toObject());
+    });
+    localStorage.setItem('types', JSON.stringify(t));
+}
+
+function loadStorage() {
+    JSON.parse(localStorage.getItem('forks')).forEach(element => {
+        new Fork(element.name, element.color, element.icon);
+    })
+    JSON.parse(localStorage.getItem('types')).forEach(element => {
+        new Type(element.name, element.icon, element.time);
+    })
+}
 
 function tick() {
     Timer.timers.forEach(element => {
@@ -51,6 +74,11 @@ class Fork {
         this.clicked();
     }
 
+    remove() {
+        this.elements.container.remove();
+        Fork.forks.splice(Fork.forks.indexOf(this), 1);
+    }
+
     clicked() {
         if (Fork.selected) {
             Fork.selected.elements.container.classList.remove("selected");
@@ -58,6 +86,14 @@ class Fork {
         Fork.selected = this;
         Fork.selected.elements.container.classList.add("selected");
         //console.log("selected: " + this.name);
+    }
+
+    toObject() {
+        return {
+            name: this.name,
+            color: this.color,
+            icon: this.icon
+        }
     }
 }
 
@@ -81,6 +117,11 @@ class Type {
         Type.types.push(this);
     }
 
+    remove() {
+        this.elements.container.remove();
+        Type.types.splice(Type.types.indexOf(this), 1);
+    }
+
     clicked() {
         if (Type.selected) {
             Type.selected.elements.container.classList.remove("selected");
@@ -93,8 +134,15 @@ class Type {
             new Timer(Fork.selected, Type.selected);
         }
     }
-}
 
+    toObject() {
+        return {
+            name: this.name,
+            time: this.time,
+            icon: this.icon
+        }
+    }
+}
 class Timer {
     static timers = [];
     static container;
@@ -145,7 +193,7 @@ class Timer {
         e.append(e1.container);
         e.append(e2.container);
         e.append(e3);
-        
+
         e.addEventListener("click", () => {
             this.clicked();
         });
