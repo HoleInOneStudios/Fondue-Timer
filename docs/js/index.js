@@ -5,20 +5,25 @@ function setup() {
     Type.container = document.getElementById("typeContainer");
     Timer.container = document.getElementById("timerContainer");
 
-    new Fork("Black", 0xffffff, "⬛");
-    new Fork("Red", 0xffffff, "🟥");
-    new Fork("Green", 0xffffff, "🟩");
-    new Fork("Purple", 0xffffff, "🟪");
-    new Fork("Blue", 0xffffff, "🟦");
-    new Fork("Yellow", 0xffffff, "🟨");
+    if (localStorage.getItem('forks') && localStorage.getItem('types')) {
+        loadStorage();
+    }
+    else {
+        new Fork("Black", 0xffffff, "⬛");
+        new Fork("Red", 0xffffff, "🟥");
+        new Fork("Green", 0xffffff, "🟩");
+        new Fork("Purple", 0xffffff, "🟪");
+        new Fork("Blue", 0xffffff, "🟦");
+        new Fork("Yellow", 0xffffff, "🟨");
 
-    new Type("Beef", "🥩", 0.5);
-    new Type("Fish", "🐟", 0.5);
-    new Type("Seafood", "🦐", 2.0);
-    new Type("Lamb", "🐑", 1.0);
-    new Type("Pork", "🐖", 1.0);
-    new Type("Poultry", "🐔", 2.0);
-    new Type("Veggies", "🥦", 3.0);
+        new Type("Beef", "🥩", 0.5);
+        new Type("Fish", "🐟", 0.5);
+        new Type("Seafood", "🦐", 2.0);
+        new Type("Lamb", "🐑", 1.0);
+        new Type("Pork", "🐖", 1.0);
+        new Type("Poultry", "🐔", 2.0);
+        new Type("Veggies", "🥦", 3.0);
+    }
 
     window.setInterval(tick, 1000);
 }
@@ -44,6 +49,13 @@ function loadStorage() {
     JSON.parse(localStorage.getItem('types')).forEach(element => {
         new Type(element.name, element.icon, element.time);
     })
+}
+
+function clearStorage() {
+    Fork.forks = [];
+    Type.types = [];
+    localStorage.clear();
+    location.reload();
 }
 
 function tick() {
@@ -269,6 +281,5 @@ function createDisplay(_i, _option = false) {
 }
 
 function toggleNav(e) {
-    console.log(e);
     e.target.parentElement.classList.toggle('open');
 }
