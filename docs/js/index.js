@@ -1,4 +1,6 @@
-editing = false;
+const Edit = {
+    editing: false,
+}
 
 function setup() {
     Fork.container = document.getElementById("forkContainer");
@@ -98,6 +100,10 @@ class Fork {
         Fork.selected = this;
         Fork.selected.elements.container.classList.add("selected");
         //console.log("selected: " + this.name);
+
+        if (Edit.editing) {
+            Edit.forkEdit(this);
+        }
     }
 
     toObject() {
@@ -142,8 +148,11 @@ class Type {
         //Type.selected.elements.container.classList.add("selected");
         //console.log("selected: " + this.name);
 
-        if (!editing) {
+        if (!Edit.editing) {
             new Timer(Fork.selected, Type.selected);
+        }
+        else {
+            Edit.typeEdit(this);
         }
     }
 

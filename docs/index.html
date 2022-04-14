@@ -28,7 +28,7 @@
   <body onload="setup()">
     <nav>
       <span onclick="toggleNav(event)" class="menuButton">&equiv;</span>
-      <!-- <p onclick="console.log('clcked')" class="menuOption">Edit</p> -->
+      <!-- <p onclick="editing = !editing;" class="menuOption">Edit</p> -->
       <p onclick="clearStorage()" class="menuOption">Reset</p>
       <a target="_blank" href="https://www.github.com/holeinonestudios/Fondue-Timer" class="menuOption">Source</a>
       <a target="_blank" href="https://www.holeinonestudios.org" class="menuOption">Website</a>
@@ -50,5 +50,20 @@
         class="timerContainer"
       ></div>
     </main>
+
+    <!-- <div id="editorBg" class="editorBg">
+      <form id="editor" class="editor">
+        <label for="editorName">Name</label>
+        <input class="editorField" id="editorName" type="text" id="editorName" />
+        <label for="editorIcon">Icon</label>
+        <input class="editorField" id="editorIcon" type="text" id="editorIcon" />
+        <label for="editorColor">Color</label>
+        <input class="editorField" id="editorColor" type="color" id="editorColor" />
+        <label for="editorTime">Time</label>
+        <input class="editorField" id="editorTime" type="text" id="editorTime" />
+        <input class="editorField" id="editorSubmit" type="submit" id="editorSubmit" value="Submit"/>
+        <input class="editorField" id="editorCancel" type="button" id="editorCancel" value="Cancel"/>
+      </form>
+    </div> -->
   </body>
 </html>
