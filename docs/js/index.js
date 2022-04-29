@@ -1,11 +1,59 @@
 const Edit = {
+    forkEdit: undefined,
+    typeEdit: undefined,
+
+    forkEditName: undefined,
+    forkEditIcon: undefined,
+    forkEditColor: undefined,
+
+    typeEditName: undefined,
+    typeEditIcon: undefined,
+    typeEditTime: undefined,
+
+    editBg: undefined,
+
     editing: false,
+
+    setup: function () {
+        this.forkEdit = document.getElementById("forkEdit");
+        this.typeEdit = document.getElementById("typeEdit");
+
+        this.forkEditName = document.getElementById("forkEditName");
+        this.forkEditIcon = document.getElementById("forkEditIcon");
+        this.forkEditColor = document.getElementById("forkEditColor");
+
+        this.typeEditName = document.getElementById("typeEditName");
+        this.typeEditIcon = document.getElementById("typeEditIcon");
+        this.typeEditTime = document.getElementById("typeEditTime");
+
+        this.editBg = document.getElementById("editBg");
+    },
+
+    editFork: function (f) {
+        this.editBg.classList.remove("hidden");
+        this.forkEdit.classList.remove('hidden');
+        this.typeEdit.classList.add('hidden');
+    },
+
+    editType: function (t) {
+        this.editBg.classList.remove("hidden");
+        this.typeEdit.classList.remove('hidden');
+        this.forkEdit.classList.add('hidden');
+    },
+
+    editCancel: function () {
+        this.editBg.classList.add("hidden");
+        this.typeEdit.classList.add('hidden');
+        this.forkEdit.classList.add('hidden');
+    }
 }
 
 function setup() {
     Fork.container = document.getElementById("forkContainer");
     Type.container = document.getElementById("typeContainer");
     Timer.container = document.getElementById("timerContainer");
+
+    Edit.setup();
 
     if (localStorage.getItem('forks') && localStorage.getItem('types')) {
         loadStorage();
@@ -102,7 +150,7 @@ class Fork {
         //console.log("selected: " + this.name);
 
         if (Edit.editing) {
-            Edit.forkEdit(this);
+            Edit.editFork(Fork.selected);
         }
     }
 
@@ -152,7 +200,7 @@ class Type {
             new Timer(Fork.selected, Type.selected);
         }
         else {
-            Edit.typeEdit(this);
+            Edit.editType(Type.selected);
         }
     }
 

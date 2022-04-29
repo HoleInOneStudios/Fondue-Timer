@@ -28,7 +28,7 @@
   <body onload="setup()">
     <nav>
       <span onclick="toggleNav(event)" class="menuButton">&equiv;</span>
-      <!-- <p onclick="editing = !editing;" class="menuOption">Edit</p> -->
+      <p onclick="Edit.editing = !Edit.editing;" class="menuOption">Edit</p>
       <p onclick="clearStorage()" class="menuOption">Reset</p>
       <a target="_blank" href="https://www.github.com/holeinonestudios/Fondue-Timer" class="menuOption">Source</a>
       <a target="_blank" href="https://www.holeinonestudios.org" class="menuOption">Website</a>
@@ -51,19 +51,27 @@
       ></div>
     </main>
 
-    <!-- <div id="editorBg" class="editorBg">
-      <form id="editor" class="editor">
-        <label for="editorName">Name</label>
-        <input class="editorField" id="editorName" type="text" id="editorName" />
-        <label for="editorIcon">Icon</label>
-        <input class="editorField" id="editorIcon" type="text" id="editorIcon" />
-        <label for="editorColor">Color</label>
-        <input class="editorField" id="editorColor" type="color" id="editorColor" />
-        <label for="editorTime">Time</label>
-        <input class="editorField" id="editorTime" type="text" id="editorTime" />
-        <input class="editorField" id="editorSubmit" type="submit" id="editorSubmit" value="Submit"/>
-        <input class="editorField" id="editorCancel" type="button" id="editorCancel" value="Cancel"/>
+    <div id="editBg" class="editBg hidden">
+      <form id="forkEdit" class="edit" action="">
+        <label for="forkEdit_name">Fork Name:</label>
+        <input type="text" id="forkEdit_name" placeholder="Fork Name" />
+        <label for="forkEdit_icon">Fork Icon:</label>
+        <input type="text" id="forkEdit_icon" placeholder="Fork Icon" />
+        <label for="forkEdit_color">Fork Color:</label>
+        <input type="color" id="forkEdit_color" placeholder="Fork Color" />
+        <input type="submit" value="Submit" onsubmit="Edit.editConfirmFork()"/>
+        <input type="button" value="Cancel" onclick="Edit.editCancel()"/>
       </form>
-    </div> -->
+      <form id="typeEdit" class="edit" action="">
+        <label for="typeEdit_name">Type Name:</label>
+        <input type="text" id="typeEdit_name" placeholder="Type Name" />
+        <label for="typeEdit_icon">Type Icon:</label>
+        <input type="text" id="typeEdit_icon" placeholder="Type Icon" />
+        <label for="typeEdit_time">Type Time:</label>
+        <input type="text" id="typeEdit_time" placeholder="Type Time" />
+        <input type="submit" value="Submit" onsubmit="Edit.editConfirmType()"/>
+        <input type="button" value="Cancel" onclick="Edit.editCancel()"/>
+      </form>
+    </div>
   </body>
 </html>
