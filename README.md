@@ -1,26 +1,17 @@
-# Fondue Timer
+# Repo-Template
 
-This is a fondue timer to keep track of cooking times. Select your fork and then tap on the food you are cooking and a new timer will be created. If you want to edit just click the edit toggle button the top right corner and click on what you want to edit. To dismiss a timer just click on it.
+This template has undergone many revisions, so repositories using it may differ. Not all elements here are necessary, and some may be redundant. Updates to this template will not be propagated to existing repositories due to time and effort constraints.
 
-## Default Temperatures
+## Folder Structure
 
-| Type       | Time                    |
-| ---------- | ----------------------- |
-| Beef       | Medium Rare: 30 seconds |
-| Fish       | 30 seconds              |
-| Seafood    | 2 minutes               |
-| Lamb       | 1 minute                |
-| Pork       | 1 minute                |
-| Poultry    | 2 minutes               |
-| Vegetables | 3 minutes               |
+- `/`: Contains essential root files (e.g., `README.md`, `.gitignore`, workspace file).
+- `/src`: All project source code resides here. Builds will focus on this directory.
+- `/docs`: Contains project documentation. By default, it includes a workflow to set up GitHub Pages, but additional configuration in settings might be required.
+- `/.github`: Contains GitHub-related configurations (e.g., workflows, templates, configs).
 
-## Default Forks
+## Workflows
 
-| Name   | Color |
-| ------ | ----- |
-| Black  | ⬛     |
-| Red    | 🟥     |
-| Green  | 🟩     |
-| Purple | 🟪     |
-| Blue   | 🟦     |
-| Yellow | 🟨     |
+- Greetings
+- Labels
+- Pages
+- Stale

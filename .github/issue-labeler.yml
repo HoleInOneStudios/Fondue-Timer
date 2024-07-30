@@ -1,5 +1,11 @@
-feature:
-  - "(feature|enhancement)"
+# .github/issue-labeler.yml
 
-bug:
-  - "(bug|issue)"
+issues:
+  - label: "bug"
+    title: ["bug", "error", "issue"]
+  - label: "enhancement"
+    title: ["feature", "enhancement", "improvement"]
+  - label: "question"
+    title: ["question", "help"]
+  - label: "documentation"
+    title: ["docs", "documentation"]
